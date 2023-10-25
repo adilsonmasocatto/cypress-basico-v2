@@ -7,3 +7,11 @@ it ('Fazer uma requist http', function() {
         expect(body).to.include('CAC TAT')
       })
 })
+
+it.only ('Encontre o gato', function() {
+    cy.visit('./src/index.html')
+    cy.get('#cat')
+      .invoke('show')
+      .should('be.visible')
+    })  
+
